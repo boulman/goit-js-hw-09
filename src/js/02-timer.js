@@ -46,7 +46,7 @@ function handleStart() {
   interval = setInterval(() => {
     setText(diff);
     diff = new Date(seletedTime.getTime() - Date.now());
-    if (!diff) {
+    if (seletedTime.getTime() < Date.now()) {
       clearInterval(interval);
     }
   }, 1000);
